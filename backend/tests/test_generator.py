@@ -59,7 +59,7 @@ class TestQualityGates:
             constraints=["Rate limit: 100 req/min"]
         )
 
-        # 60 minutes but budget is 240 (4 hours) - ratio 0.25, outside Â+/-15%
+        # 60 minutes but budget is 240 (4 hours) - ratio 0.25, outside Ã‚+/-15%
         result = gate.validate_scope(scope, time_budget_hours=4.0)
         assert not result.passed
         assert any("time mismatch" in issue.lower() for issue in result.issues)
